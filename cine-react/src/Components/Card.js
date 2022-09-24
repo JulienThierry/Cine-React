@@ -1,5 +1,4 @@
 import React from "react";
-
 const Card = ({ movie }) => {
   return (
     <div className="card">
@@ -19,7 +18,8 @@ const Card = ({ movie }) => {
       </h4>
       <h2>Synopsis</h2>
       <p>{movie.overview}</p>
-      <button></button>
+      <button>En savoir plus</button>
+      <i id="heart" className="fa-regular fa-heart heart"></i>
     </div>
   );
 };
