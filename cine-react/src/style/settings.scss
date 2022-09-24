@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "font-1";
+    src: url(../assets/fonts/Questrial-Regular.ttf);
+  }
+  @font-face {
+    font-family: "font-2";
+    src: url(../assets/fonts/Modak-Regular.ttf);
+  }
+
+
+  $font-1: "font-1", sans-serif;
+  $font-2: "font-2", sans-serif;
+  $color-1: rgb(86, 135, 109);
+  $color-2:rgb(141, 179, 139) ;
+  $color-3: rgb(122, 65, 110);
+  $color-4: rgb(221, 219, 241);
+  $black1: rgb(3, 3, 3);
+  $black2: rgb(24, 24, 24);
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none ;
+    text-decoration: none;
+    font-family: $font-1;
+   
+}
+body{
+    background:$color-2 ;
+}
