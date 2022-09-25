@@ -1,5 +1,25 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 const Card = ({ movie }) => {
+  const [genres, setGenres] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.themoviedb.org/3/genre/movie/list?api_key=880e15e66e34d6cd0b057e8969691538&language=fr-FR"
+      )
+      .then((res) => setGenres(res.data.genres));
+  }, []);
+
+  function formatDate(input) {
+    var datePart = input.match(/\d+/g),
+      year = datePart[0],
+      month = datePart[1],
+      day = datePart[2];
+
+    return day + "/" + month + "/" + year;
+  }
+
   return (
     <div className="card">
       <img
@@ -11,7 +31,17 @@ const Card = ({ movie }) => {
         alt={"affiche de " + movie.title}
       />
       <h2>{movie.title}</h2>
-      <h3>Date de sortie : {movie.release_date}</h3>
+      <ul>
+        {movie.genre_ids.map((genre) => {
+          genres.map((id) => {
+            console.log(genre);
+            if (genre === id.id) {
+              return <li>{id.name}</li>;
+            }
+          });
+        })}
+      </ul>
+      <h3>Date de sortie : {formatDate(movie.release_date)}</h3>
       <h4>
         <i className="fa-solid fa-star"></i>
         {movie.vote_average} ({movie.vote_count})
