@@ -1,60 +1,63 @@
-.header{
-    display: flex;
-    position: relative;
-    
+.header {
+  display: flex;
+  position: relative;
 
-    &:before{
-      content: "";
-      position: absolute;
-      background: $color-4;
-      width: 25%;
-      height: 100px;
-      z-index: 0;
-      border-radius: 50px;
-      transform: translateX(-50%);
-      transform: translateY(-50%);
-    }
-    h1{
-      font-family: $font-2;
-      letter-spacing: 2px;
-      font-size: 3rem;
-      text-transform: uppercase;
-      font-weight: 400;
-      margin: 0 auto;
-      padding: 20px;
-      color: $color-3;
-      text-shadow: 0 1px 0px $black1, 1px 0 0px $black2, 1px 2px 1px $black1, 2px 1px 1px $black2, 2px 3px 2px $black1, 3px 2px 2px $black2, 3px 4px 2px $black1, 4px 3px 3px $black2, 4px 5px 3px $black1, 5px 4px 2px $black2, 5px 6px 2px $black1, 6px 5px 2px $black2;
-    }
-}
 
-ul{
+  &:before {
+    content: "";
+    position: absolute;
+    background: $color-4;
+    width: 25%;
+    height: 100px;
+    z-index: 0;
+    border-radius: 50px;
+    transform: translateX(-50%);
+    transform: translateY(-50%);
+  }
+
+  h1 {
+    font-family: $font-2;
+    letter-spacing: 2px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 20px;
+    color: $color-3;
+    text-shadow: 0 1px 0px $black1, 1px 0 0px $black2, 1px 2px 1px $black1, 2px 1px 1px $black2, 2px 3px 2px $black1, 3px 2px 2px $black2, 3px 4px 2px $black1, 4px 3px 3px $black2, 4px 5px 3px $black1, 5px 4px 2px $black2, 5px 6px 2px $black1, 6px 5px 2px $black2;
+  }
+
+  ul {
     display: flex;
     margin-top: 15px;
     position: absolute;
     width: 25%;
     justify-content: space-evenly;
     z-index: 100;
-    
-.link{
-  display: flex;
-  color: $color-3;
-  letter-spacing: 1px;
-  
-  i{
-    transition: all 0.3s;
-    margin-right: 5px;
-  }
-  li{
-    font-family: $font-2;
-  }
-  &:hover{
-    i {
-      font-size:1.5rem;
-      transform: translateX(-50%);
-      transform: translateY(-25%);
+
+    .link {
+      display: flex;
+      color: $color-3;
+      letter-spacing: 1px;
+
+      i {
+        transition: all 0.3s;
+        margin-right: 5px;
+      }
+
+      li {
+        font-family: $font-2;
+      }
+
+      &:hover {
+        i {
+          font-size: 1.5rem;
+          transform: translateX(-50%);
+          transform: translateY(-25%);
+        }
+      }
     }
-}}   
 
 
+  }
 }
-

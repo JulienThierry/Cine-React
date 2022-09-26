@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const Card = ({ movie }) => {
   const [genres, setGenres] = useState([]);
 
+
   useEffect(() => {
     axios
       .get(
@@ -20,6 +21,19 @@ const Card = ({ movie }) => {
     return day + "/" + month + "/" + year;
   }
 
+
+  function matchGenre(id) {
+    
+    let res = genres.map((genres) => {
+  
+      if(genres.id === id){
+         return  genres.name;
+      }else return null
+       
+    })
+    return res;
+  }
+
   return (
     <div className="card">
       <img
@@ -30,22 +44,24 @@ const Card = ({ movie }) => {
         }
         alt={"affiche de " + movie.title}
       />
-      <h2>{movie.title}</h2>
+      <h2>{movie.title} </h2>
       <ul>
-        {movie.genre_ids.map((genre) => {
-          genres.map((id) => {
-            console.log(genre);
-            if (genre === id.id) {
-              return <li>{id.name}</li>;
-            }
-          });
-        })}
+        
+        {movie.genre_ids.map((genreId) => { 
+          
+          return <li>{matchGenre(genreId)}</li>}
+        
+        )
+       }
       </ul>
-      <h3>Date de sortie : {formatDate(movie.release_date)}</h3>
-      <h4>
+      <div className="date">
+      <h3>Date de sortie : {movie.release_date && formatDate(movie.release_date)  } </h3>
+      
+        <h4>
         <i className="fa-solid fa-star"></i>
-        {movie.vote_average} ({movie.vote_count})
-      </h4>
+        {movie.vote_average} ({movie.vote_count})</h4></div>
+      
+      
       <h2>Synopsis</h2>
       <p>{movie.overview}</p>
       <button>En savoir plus</button>
