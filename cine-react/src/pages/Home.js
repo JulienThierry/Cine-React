@@ -26,7 +26,10 @@ const Home = () => {
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Chercher le nom d'un film... "
         />
+        <button>Top</button>
+        <button>Flop</button>
       </div>
+
       <div className="movies">
         {movies && movies.map((movie) => <Card movie={movie} key={movie.id} />)}
       </div>
