@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+
+
 const Card = ({ movie }) => {
   const [genres, setGenres] = useState([]);
 
@@ -40,7 +42,7 @@ const Card = ({ movie }) => {
         src={
           movie.poster_path
             ? "https://image.tmdb.org/t/p/original/" + movie.poster_path
-            : "../public/unavailable.jpg"
+            : "../assets/unavailable.jpg"
         }
         alt={"affiche de " + movie.title}
       />
